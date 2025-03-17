@@ -22,5 +22,17 @@ function actualizarLista() {
         let nuevoAmigo = document.createElement('li');
         nuevoAmigo.textContent = amigo; 
         listaAmigosHTML.appendChild(nuevoAmigo); 
+        nuevoAmigo.classList.add("name-item");
     });
+}
+
+function sortearAmigo() {
+    if (listaAmigos.length === 0) {
+        alert("No hay amigos en la lista. Agrega al menos un amigo.");
+        return;
+    }
+    let indiceAleatorio = Math.floor(Math.random() * listaAmigos.length);
+    let amigoSorteado = listaAmigos[indiceAleatorio];
+    let resultadoHTML = document.getElementById('resultado');
+    resultadoHTML.innerHTML = `<li class="result-item">Amigo sorteado: ${amigoSorteado}</li>`;
 }
